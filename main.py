@@ -54,7 +54,6 @@ from discord.ext import commands
 from datetime import datetime
 
 class JARVIS(commands.Bot):
-    
     def __init__(self):
         super().__init__(command_prefix=config.BOT_PREFIX, help_command=None, reconnect=True)
 
