@@ -12,7 +12,7 @@ class OwnerCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
+    @commands.command(aliases=["load"])
     @commands.is_owner()
     async def bog_load(self, ctx, *, cog: str):
         """Command which Loads a Module.
@@ -25,7 +25,7 @@ class OwnerCog(commands.Cog):
         else:
             await ctx.send('**`SUCCESS`**')
 
-    @commands.command()
+    @commands.command(aliases=["unload"])
     @commands.is_owner()
     async def bog_unload(self, ctx, *, cog: str):
         """Command which Unloads a Module.
@@ -38,7 +38,7 @@ class OwnerCog(commands.Cog):
         else:
             await ctx.send('**`SUCCESS`**')
 
-    @commands.command()
+    @commands.command(aliases=["reload"])
     @commands.is_owner()
     async def bog_reload(self, ctx, *, cog: str):
         """Command which Reloads a Module.
@@ -52,7 +52,7 @@ class OwnerCog(commands.Cog):
         else:
             await ctx.send('**`SUCCESS`**')
 
-    @commands.command(aliases=["reload"])
+    @commands.command(aliases=["reload_all"])
     @commands.is_owner()
     async def bog_reload_all(self, ctx):
         try:
