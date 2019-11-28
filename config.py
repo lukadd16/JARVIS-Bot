@@ -3,7 +3,7 @@
 # --------------------------------------------------------------
 
 # Bot token
-BOT_TOKEN = "NTU5ODkwNjYzOTI0MTcwNzYy.Xc4LSQ.fMLcSUyl-LkqtXO2cTFUzEuJHvE"
+BOT_TOKEN = "insert bot token"
 
 # Bot prefix
 BOT_PREFIX = "jj "
