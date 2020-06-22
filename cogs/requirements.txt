@@ -1,0 +1,5 @@
+discord.py == 1.2.3
+psutil
+# dblpy
+# Pillow (for image manipulation)
+# python-resize-image (from blurplefied bot)
