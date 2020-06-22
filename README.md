@@ -1,2 +1,2 @@
 # jarvis-bot
-First repo for my personal discord bot project
+Beta Branch of my personal Discord Bot project
