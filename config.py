@@ -3,7 +3,7 @@
 # --------------------------------------------------------------
 
 # Bot Token
-BOT_TOKEN = "NTc4MzIwNDg1NjQxNjE3NDA5.XSTkMg.fIcWAP2RS72Gv1RK0x7bMXlOQvI"
+BOT_TOKEN = ""
 
 # Bot Prefix
 BOT_PREFIX = "jar "
