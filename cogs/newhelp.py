@@ -22,17 +22,34 @@ class NewHelpCog(commands.Cog):
     @commands.group()
     async def nhelp(self, ctx):
         if ctx.invoked_subcommand is None:
-            embed=discord.Embed(
-                description=f"Run `{self.bot.config.BOT_PREFIX}help <commandname>` to view detailed help on a specific command\n"
+            embed = discord.Embed(
+                description=f"Run `{self.bot.config.BOT_PREFIX}help "
+                            "<commandname>` to view detailed help on a specific command\n"
                             "`[] Required Args`\n"
                             "`<> Optional Args`\n\n"
                             "Click the header of any of my commands to invite me to your own server", # Will become useless with the proposed change above
                 colour=self.bot.config.BOT_COLOUR
             )
-            embed.set_author(name="J.A.R.V.I.S. Bot Help", url=self.bot.config.BOT_URL, icon_url=self.bot.user.avatar_url)
-            embed.add_field(name="Fun Commands [All Disabled]", value="`choose`, `roll`", inline=False)
-            embed.add_field(name="Utility Commands [6]", value="`about`, `avatar`, `changelog`, `ping`, `suggest`, `whois`", inline=False)
-            embed.add_field(name="Moderation Commands [5]", value="`ban`, `kick`, `purge`, `softban`, `unban`", inline=False) # None of these have sub-help commands atm
+            embed.set_author(
+                name="J.A.R.V.I.S. Bot Help",
+                url=self.bot.config.BOT_URL,
+                icon_url=self.bot.user.avatar_url
+            )
+            embed.add_field(
+                name="Fun Commands [All Disabled]",
+                value="`choose`, `roll`",
+                inline=False
+            )
+            embed.add_field(
+                name="Utility Commands [6]",
+                value="`about`, `avatar`, `changelog`, `ping`, `suggest`, `whois`",
+                inline=False
+            )
+            embed.add_field(
+                name="Moderation Commands [5]", 
+                value="`ban`, `kick`, `purge`, `softban`, `unban`",  # None of these have sub-help commands atm
+                inline=False
+            )
             embed.set_footer(text=self.bot.config.BOT_FOOTER)
             await ctx.send(embed=embed)
 
@@ -46,46 +63,59 @@ class NewHelpCog(commands.Cog):
 
     @nhelp.command(aliases=["botinfo", "info"])
     async def about(self, ctx):
-        embed=discord.Embed(
-            description=f"Retrieves relevant information about me (uptime, library, etc.)\n\n"
-                        "**Type:** Utility\n"
-                        f"**Usage:** `{self.bot.config.BOT_PREFIX}about`\n"
-                        "**Aliases:** `botinfo`, `info`",
+        embed = discord.Embed(
+            description="Retrieves relevant information about me "
+                        "(uptime, library, etc.)\n\n**Type:** Utility"
+                        f"\n**Usage:** `{self.bot.config.BOT_PREFIX}about`"
+                        "\n**Aliases:** `botinfo`, `info`",
             colour=self.bot.config.BOT_COLOUR
         )
-        embed.set_author(name=f"{self.bot.user.name} About Command", url=self.bot.config.BOT_URL, icon_url=self.bot.user.avatar_url)
+        embed.set_author(
+            name=f"{self.bot.user.name} About Command",
+            url=self.bot.config.BOT_URL,
+            icon_url=self.bot.user.avatar_url
+        )
         embed.set_footer(text=self.bot.config.BOT_FOOTER)
         await ctx.send(embed=embed)
 
     @nhelp.command(aliases=["av"])
     async def avatar(self, ctx):
-        embed=discord.Embed(
-            description=f"Outputs an enlarged version of a specified user's profile picture\n\n"
-                        "**Type:** Utility\n"
-                        f"**Usage:** `{self.bot.config.BOT_PREFIX}avatar <user>`\n"
-                        f"**Aliases:** `av`\n{self.bot.config.BOT_HELP_USER_ARG}",
+        embed = discord.Embed(
+            description=f"Outputs an enlarged version of a specified user's "
+                        "profile picture\n\n**Type:** Utility"
+                        f"\n**Usage:** `{self.bot.config.BOT_PREFIX}avatar "
+                        "<user>`\n**Aliases:** `av`"
+                        f"\n{self.bot.config.BOT_HELP_USER_ARG}",
             colour=self.bot.config.BOT_COLOUR
         )
-        embed.set_author(name=f"{self.bot.user.name} Avatar Command", url=self.bot.config.BOT_URL, icon_url=self.bot.user.avatar_url)
+        embed.set_author(
+            name=f"{self.bot.user.name} Avatar Command",
+            url=self.bot.config.BOT_URL,
+            icon_url=self.bot.user.avatar_url
+        )
         embed.set_footer(text=self.bot.config.BOT_FOOTER)
         await ctx.send(embed=embed)
 
     @nhelp.command(aliases=["version", "whatsnew"])
     async def changelog(self, ctx):
-        embed=discord.Embed(
+        embed = discord.Embed(
             description=f"Learn what's new with this version of the bot\n\n"
                         "**Type:** Utility\n"
                         f"**Usage:** `{self.bot.config.BOT_PREFIX}changelog`\n"
                         "**Aliases:** `version`, `whatsnew`",
             colour=self.bot.config.BOT_COLOUR
         )
-        embed.set_author(name=f"{self.bot.user.name} Changelog Command", url=self.bot.config.BOT_URL, icon_url=self.bot.user.avatar_url)
+        embed.set_author(
+            name=f"{self.bot.user.name} Changelog Command",
+            url=self.bot.config.BOT_URL,
+            icon_url=self.bot.user.avatar_url
+        )
         embed.set_footer(text=self.bot.config.BOT_FOOTER)
         await ctx.send(embed=embed)
 
     @nhelp.command()
     async def ping(self, ctx):
-        embed=discord.Embed(
+        embed = discord.Embed(
             description=f"Tests my connection to Discord\n\n"
                         "**Type:** Utility\n"
                         f"**Usage:** `{self.bot.config.BOT_PREFIX}ping`",
